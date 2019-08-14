@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Examen 2</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand">Compra Tickets Cine</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Compras</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link">Buscar Compras</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container body-content">
+        <div id="imgloader" style="display:none;position:absolute;top:50%;left:50%;padding:2px;">
+            <img src="~/Content/img/loader.gif" />
+        </div>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Nombre Completo Estudiante</p>
+        </footer>
+    </div>
+</body>
+</html>
