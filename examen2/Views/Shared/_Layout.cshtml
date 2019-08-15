@@ -12,26 +12,52 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-        <a class="navbar-brand">Compra Tickets Cine</a>
+        @*<a class="navbar-brand">Compra Tickets Cine</a>*@
+
+        @Html.ActionLink("Compra Tickets Cine", "Index",
+                   "InicioCine",
+                   new { }
+                   , new { @class = "navbar-brand" })
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    
+                <li class="nav-item">
+                    @Html.ActionLink("Tickets", "Index",
+                   "tickets",
+                   new { }
+                   , new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Compras</a>
+                    @Html.ActionLink("Compras", "Index",
+                   "compraCine",
+                   new { }
+                   , new { @class = "nav-link" })
                 </li>
 				<li class="nav-item">
-                    <a class="nav-link">Buscar Compras</a>
+                    @Html.ActionLink("Buscar Compras", "Index",
+                   "compraCine",
+                   new { }
+                   , new { @class = "nav-link" })
                 </li>
                 
             </ul>
         </div>
     </nav>
+
+
+
+    @if (ViewBag.Mensaje != "" && ViewBag.Mensaje != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>@ViewBag.Mensaje</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
     
     <div class="container body-content">
         <div id="imgloader" style="display:none;position:absolute;top:50%;left:50%;padding:2px;">
@@ -40,7 +66,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Nombre Completo Estudiante</p>
+            <p>&copy; @DateTime.Now.Year - Pablo Mora Morales.</p>
         </footer>
     </div>
 </body>

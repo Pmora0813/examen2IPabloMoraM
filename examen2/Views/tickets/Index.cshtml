@@ -1,0 +1,49 @@
+﻿@model IEnumerable<examen2.Models.ticket>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Tickes</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombrePelicula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precioNino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precioRegular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidaTicketsdDescuento)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombrePelicula)
+            </td>
+
+            <td>
+                ₡ @Html.DisplayFor(modelItem => item.precioNino)
+            </td>
+            <td>
+                ₡  @Html.DisplayFor(modelItem => item.precioRegular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidaTicketsdDescuento)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.idTicket })
+            </td>
+        </tr>
+    }
+
+</table>

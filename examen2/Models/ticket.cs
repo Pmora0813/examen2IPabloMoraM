@@ -17,17 +17,30 @@ namespace examen2.Models
 
         [Key]
         public int idTicket { get; set; }
-        
+        [Display(Name = "Película")]
+        [Required]
         [StringLength(150)]
         public string nombrePelicula { get; set; }
 
-        [Column(TypeName = "text")]      
+        [Display(Name = "Detalle")]
+        [DataType(DataType.MultilineText)]
+        [Column(TypeName = "text")]
+        [Required]
         public string detalle { get; set; }
 
+        [Display(Name = "Precio Niño")]
+        [RegularExpression(@"[0-9]*", ErrorMessage = "Solo números sin decimales")]
+        [Required]
         public decimal precioNino { get; set; }
 
+        [Display(Name = " Precio Regular")]
+        [RegularExpression(@"[0-9]*", ErrorMessage = "Solo números sin decimales")]
+        [Required]
         public decimal precioRegular { get; set; }
 
+        [Display(Name = "Cantidad de Tickets para descuento ")]
+        [RegularExpression(@"[0-9]*", ErrorMessage = "Solo números sin decimales")]
+        [Required]
         public int cantidaTicketsdDescuento { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
