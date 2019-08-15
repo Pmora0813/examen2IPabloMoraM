@@ -1,68 +1,44 @@
-﻿@model examen2.Models.compraCine
-
-<div>
-    <h4>compraCine</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ticket.nombrePelicula)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ticket.nombrePelicula)
-        </dd>
-
-        <dt>
+﻿@model IEnumerable<examen2.Models.compraCine>
+<table class="table">
+    <tr>
+        <th>
             @Html.DisplayNameFor(model => model.fecha)
-        </dt>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ticket.nombrePelicula)
+        </th>
 
-        <dd>
-            @Html.DisplayFor(model => model.fecha)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.cantidadNinos)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cantidadNinos)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.cantidadRegular)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cantidadRegular)
-        </dd>
-
-        <dt>
+        <th>
             @Html.DisplayNameFor(model => model.descuento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.descuento)
-        </dd>
-
-        <dt>
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.cargoServicio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cargoServicio)
-        </dd>
-
-        <dt>
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.total)
-        </dt>
+        </th>
+    </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.total)
-        </dd>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ticket.nombrePelicula)
+            </td>
+            <td>
+                ₡  @Html.DisplayFor(modelItem => item.descuento)
+            </td>
+            <td>
+                ₡  @Html.DisplayFor(modelItem => item.cargoServicio)
+            </td>
+            <td>
+                ₡  @Html.DisplayFor(modelItem => item.total)
+            </td>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idCompra }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </tr>
+    }
+
+</table>

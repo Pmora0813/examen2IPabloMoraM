@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Buscar Ticket por Pelicula";
+}
+<div class="form-horizontal">
+    <h2>Buscar Lugar por Tipo</h2>
+    @using (Ajax.BeginForm("Buscarticket", "CompraCine", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET",
+        LoadingElementId = "imgloader",
+        UpdateTargetId = "divLista",
+    }))
+    {
+        <div class="form-group">
+            @Html.Label("Película", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("idTicket",
+               (SelectList)ViewBag.peliculas,
+               htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Bucar" class="btn btn-primary" />
+            </div>
+        </div>
+
+    }
+</div>
+
+<div id="divLista"></div>

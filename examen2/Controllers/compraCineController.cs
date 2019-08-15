@@ -114,6 +114,18 @@ namespace examen2.Controllers
             return View(compraCine);
         }
 
+        public ActionResult buscarticket(int? idTicket)
+        {
+            ViewBag.peliculas = new SelectList(db.ticket, "idTicket", "nombrePelicula");
+            if (idTicket != null)
+            {
+                var lista = db.compraCine.Where(x => x.idTicket == idTicket).ToList();
+
+                return PartialView("_Listatickets", lista);
+            }
+            return View();
+        }
+
 
         protected override void Dispose(bool disposing)
         {

@@ -7,7 +7,7 @@
     <script src="~/Scripts/jquery-3.4.1.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
-
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -37,7 +37,7 @@
                    , new { @class = "nav-link" })
                 </li>
 				<li class="nav-item">
-                    @Html.ActionLink("Buscar Compras", "Index",
+                    @Html.ActionLink("Buscar Compras", "buscarticket",
                    "compraCine",
                    new { }
                    , new { @class = "nav-link" })

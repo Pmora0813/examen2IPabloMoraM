@@ -190,8 +190,8 @@
     <Content Include="Views\tickets\Edit.cshtml" />
     <Content Include="Views\tickets\Index.cshtml" />
     <Content Include="Views\compraCine\Index.cshtml" />
-    <Content Include="Views\compraCine\Details.cshtml" />
     <Content Include="Views\compraCine\_Listatickets.cshtml" />
+    <Content Include="Views\compraCine\buscarticket.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
