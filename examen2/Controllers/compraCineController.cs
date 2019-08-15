@@ -48,7 +48,7 @@ namespace examen2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idCompra,fecha,idTicket,cantidadNinos,cantidadRegular,descuento,cargoServicio,total")] compraCine compraCine)
+        public ActionResult Create(compraCine compraCine)
         {
             if (ModelState.IsValid)
             {

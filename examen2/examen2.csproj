@@ -188,11 +188,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\tickets\Edit.cshtml" />
     <Content Include="Views\tickets\Index.cshtml" />
-    <Content Include="Views\compraCine\Create.cshtml" />
-    <Content Include="Views\compraCine\Delete.cshtml" />
-    <Content Include="Views\compraCine\Details.cshtml" />
-    <Content Include="Views\compraCine\Edit.cshtml" />
     <Content Include="Views\compraCine\Index.cshtml" />
+    <Content Include="Views\compraCine\Crear.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
