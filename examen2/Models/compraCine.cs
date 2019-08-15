@@ -39,7 +39,6 @@ namespace examen2.Models
         public decimal total { get; set; }
 
         [Display(Name = "Ticket")]
-
         public virtual ticket ticket { get; set; }
     }
 }
