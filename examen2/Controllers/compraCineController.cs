@@ -25,21 +25,6 @@ namespace examen2.Controllers
             return View(compraCine.ToList());
         }
 
-        // GET: compraCine/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            compraCine compraCine = db.compraCine.Find(id);
-            if (compraCine == null)
-            {
-                return HttpNotFound();
-            }
-            return View(compraCine);
-        }
-
         // GET: compraCine/Create
         public ActionResult Create()
         {
@@ -101,13 +86,13 @@ namespace examen2.Controllers
                 compraCine.total = total;
                 compraCine.cargoServicio = cargoServicio;
                 db.SaveChanges();
-                TempData["mensaje"] = "Guardado con Exito.";
+                TempData["mensaje"] = "Guardado con éxito.";
                 return RedirectToAction("Index");
             }
             else
             {
 
-                TempData["mensaje"] = "No se guardo.";
+                TempData["mensaje"] = "No guardodo.";
             }
 
             ViewBag.idTicket = new SelectList(db.ticket, "idTicket", "nombrePelicula", compraCine.idTicket);

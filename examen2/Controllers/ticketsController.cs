@@ -35,13 +35,13 @@ namespace examen2.Controllers
 
             if (id == null)
             {
-                TempData["mensaje"] = "Especifique el ticket";
+                TempData["mensaje"] = "Especifique el ticket.";
                 return RedirectToAction("Index");
             }
             ticket tickt = db.ticket.Find(id);
             if (tickt == null)
             {
-                TempData["mensaje"] = "No existe el ticket";
+                TempData["mensaje"] = "No éxiste el ticket.";
                 return RedirectToAction("Index");
             }
             
@@ -62,8 +62,12 @@ namespace examen2.Controllers
             {
                 db.Entry(ticket).State = EntityState.Modified;
                 db.SaveChanges();
-                TempData["mensaje"] = "Guardado con Exito";
+                TempData["mensaje"] = "Editado con éxito.";
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["mensaje"] = "NO Editado.";
             }
             return View("Edit",ticket);
         }

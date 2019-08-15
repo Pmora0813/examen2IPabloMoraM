@@ -30,12 +30,15 @@ namespace examen2.Models
         public int cantidadRegular { get; set; }
 
         [Display(Name = "Descuento")]
+        [DisplayFormat(DataFormatString = "{0}", ApplyFormatInEditMode = true)]
         public decimal descuento { get; set; }
 
         [Display(Name = "Cargo Servicio")]
+        [DisplayFormat(DataFormatString = "{0}", ApplyFormatInEditMode = true)]
         public decimal cargoServicio { get; set; }
 
         [Display(Name = "Total")]
+        [DisplayFormat(DataFormatString = "{0}", ApplyFormatInEditMode = true)]
         public decimal total { get; set; }
 
         [Display(Name = "Ticket")]

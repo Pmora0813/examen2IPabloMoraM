@@ -30,17 +30,20 @@ namespace examen2.Models
 
         [Display(Name = "Precio Niño")]
         [RegularExpression(@"[0-9]*", ErrorMessage = "Solo números sin decimales")]
+        [DisplayFormat(DataFormatString  = "{0}", ApplyFormatInEditMode = true)]
         [Required]
         public decimal precioNino { get; set; }
 
         [Display(Name = " Precio Regular")]
         [RegularExpression(@"[0-9]*", ErrorMessage = "Solo números sin decimales")]
         [Required]
+        [DisplayFormat(DataFormatString = "{0}", ApplyFormatInEditMode = true)]
         public decimal precioRegular { get; set; }
 
         [Display(Name = "Cantidad de Tickets para descuento ")]
         [RegularExpression(@"[0-9]*", ErrorMessage = "Solo números sin decimales")]
         [Required]
+        [DisplayFormat(DataFormatString = "{0}", ApplyFormatInEditMode = true)]
         public int cantidaTicketsdDescuento { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
